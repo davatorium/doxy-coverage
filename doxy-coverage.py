@@ -130,8 +130,7 @@ def report (files, exclude_dirs):
 	def file_cmp (a,b):
 		return cmp(get_coverage(a), get_coverage(b))
 
-	files_sorted = files.keys()
-	files_sorted.sort(file_cmp)
+	files_sorted = sorted(files.keys())
 	files_sorted.reverse()
 
 	total_yes = 0
@@ -159,8 +158,7 @@ def report (files, exclude_dirs):
 
 		print ('%3d%% - %s - (%d of %d)'%(doc_per, f, doc_yes, (doc_yes + doc_no)))
 
-		defs_sorted = defs.keys()
-		defs_sorted.sort()
+		defs_sorted = sorted(defs.keys())
 		for d in defs_sorted:
 			if not defs[d]:
 				print ("\t", d)
