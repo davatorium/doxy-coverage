@@ -158,6 +158,9 @@ def report (files, exclude_dirs):
 
 		print ('%3d%% - %s - (%d of %d)'%(doc_per, f, doc_yes, (doc_yes + doc_no)))
 
+
+		if None in defs:
+			del defs[None]
 		defs_sorted = sorted(defs.keys())
 		for d in defs_sorted:
 			if not defs[d]:
